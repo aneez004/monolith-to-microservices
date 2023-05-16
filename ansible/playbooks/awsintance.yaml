@@ -16,6 +16,10 @@
         assign_public_ip: true
       wait: yes
     register: ec2_instance
+  
+  - name: display ec2InstanceOutput
+    debug:
+      var: ec2_instance.stdout
 
   - name: Add EC2 instance to AWX inventory
     add_host:
