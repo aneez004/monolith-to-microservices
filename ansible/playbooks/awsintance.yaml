@@ -12,6 +12,8 @@
       region: "{{ aws_region }}"
       security_group: "{{ security_group }}"
       vpc_subnet_id: "{{ subnet_id }}"
+      network:
+        assign_public_ip: true
       wait: yes
     register: ec2_instance
 
