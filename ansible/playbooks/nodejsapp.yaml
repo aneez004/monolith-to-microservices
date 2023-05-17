@@ -1,5 +1,5 @@
 - name: Install Dependencies and Deploy Node.js Application
-  hosts: your_host_group
+  hosts: ec2_instances
   become: true
 
   tasks:
