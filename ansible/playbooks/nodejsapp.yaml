@@ -35,9 +35,11 @@
         chdir: "app/{{ app_path }}"
         
     - name: Start Node.js application
-      command: npm run start
+      command: "nohup npm run start &"
       args:
         chdir: "app/{{ app_path }}"
+      async: 0
+      poll: 0
       register: npm_output
     
       
