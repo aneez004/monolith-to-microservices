@@ -22,7 +22,7 @@
     - name: Clone Git repository
       git:
         repo: "{{ git_repo }}"
-        dest: /
+        dest: app
         version: master  # or specify a branch/tag/commit
 
     - name: Install Node.js dependencies
