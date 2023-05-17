@@ -27,16 +27,16 @@
 
     - name: Install Node.js dependencies
       community.general.npm:
-        path: "{{ app_path }}"
+        path: "app/{{ app_path }}"
 
     - name: Build React application
       community.general.npm:
-        path: "{{ app_path }}"
+        path: "app/{{ app_path }}"
         args: run build
 
     - name: Start Node.js application
       community.general.npm:
-        path: "{{ app_path }}"
+        path: "app/{{ app_path }}"
         args: run start
       register: npm_output
       
