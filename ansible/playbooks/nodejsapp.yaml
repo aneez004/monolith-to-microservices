@@ -30,19 +30,16 @@
         path: "app/{{ app_path }}"
         
     - name: Build React application
-      community.general.npm:
-        path: "app/{{ app_path }}"
-        name:
-        - run
-        - build
+      command: npm run build
+      args:
+        chdir: "app/{{ app_path }}"
         
     - name: Start Node.js application
-      community.general.npm:
-        path: "app/{{ app_path }}"
-        name:
-        - run
-        - start
+      command: npm run start
+      args:
+        chdir: "app/{{ app_path }}"
       register: npm_output
+    
       
     - name: Show output of npm run start
       debug:
