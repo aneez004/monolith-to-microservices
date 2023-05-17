@@ -4,6 +4,7 @@
   
   collections:
     - community.general
+    
   tasks:
     - name: Install Node.js and npm
       apt:
@@ -22,16 +23,16 @@
         version: master  # or specify a branch/tag/commit
 
     - name: Install Node.js dependencies
-      npm:
+      community.general.npm:
         path: "{{ app_path }}"
 
     - name: Build React application
-      npm:
+      community.general.npm:
         path: "{{ app_path }}"
         args: run build
 
     - name: Start Node.js application
-      npm:
+      community.general.npm:
         path: "{{ app_path }}"
         args: run start
       register: npm_output
