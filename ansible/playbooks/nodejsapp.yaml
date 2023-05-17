@@ -34,6 +34,6 @@
         args: run start
       register: npm_output
       
-      - name: Show output of npm run start
+    - name: Show output of npm run start
       debug:
         var: npm_output
